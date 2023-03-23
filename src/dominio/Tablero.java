@@ -1,5 +1,7 @@
 
     package dominio;
+    import java.util.Random;
+
     /**
      * Esta clase es responsable de leer el tablero de un
      * fichero en forma de ceros y unos, ir transitando de
@@ -16,12 +18,12 @@
         public static int[][] generarEstadoActualPorMontecarlo(){
             int[][] matrizinic = new int[dimension][dimension];
             Random rnd = new Random();
-            for(int i = 0; i < dimension; i++){
-                for(int j = 0; j < dimension; j++){
+            for(int a = 0; a < dimension; a++){
+                for(int b = 0; b < dimension; b++){
                     if (rnd.nextDouble() < 0.5){
-                        matrizinic[i][j] = 0;
+                        matrizinic[a][b] = 0;
                     }else{
-                        matrizinic[i][j] = 1;
+                        matrizinic[a][b] = 1;
                     }
                 }
             }
@@ -31,7 +33,7 @@
         public void imprimirEstadoActualPorMontecarlo(){
             for(int a = 0; a < dimension; a++){
                 for(int b = 0; b < dimension; b++){
-                    System.out.printf("%2d", estadoInicial[a][b]);
+                    System.out.print(estadoInicial[a][b] + " ");
                 }
                 System.out.println();
             }
